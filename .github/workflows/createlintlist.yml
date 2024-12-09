@@ -22,5 +22,10 @@ jobs:
           
           git init target/org/eolang/motives/
           
-          # TODO заменить путь к репе на переменную гитхаба и узнать ветку гитхаб пэйджес
-          git push https://github.com/objectionary/lints.git gh-pages
+          git checkout main
+          
+          git add /org/eolang/motives/.
+          
+          git commit -m "test"
+          
+          git push ${{ github.server_url }}${{ github.event.repository.name }} main:gh-pages

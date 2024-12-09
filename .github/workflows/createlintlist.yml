@@ -1,0 +1,23 @@
+'on':
+  push:
+    branches:
+      - master
+
+jobs:
+  create_lint_list:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+      - run: |
+          mvn clean
+          mvn package -DskipTests
+          
+          java -jar target/printAll.jar
+          
+          jar xvf target/printAll.jar /org/eolang/motives/
+          
+          git init target/org/eolang/motives/
+          
+          # TODO заменить путь к репе на переменную гитхаба и узнать ветку гитхаб пэйджес
+          git push https://github.com/objectionary/lints.git gh-pages

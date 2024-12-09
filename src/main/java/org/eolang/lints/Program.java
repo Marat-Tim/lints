@@ -23,15 +23,17 @@
  */
 package org.eolang.lints;
 
-import com.jcabi.xml.XML;
-import com.jcabi.xml.XMLDocument;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
+
+import com.jcabi.xml.XML;
+import com.jcabi.xml.XMLDocument;
+import org.cactoos.iterable.IterableOf;
 import org.cactoos.iterable.Joined;
+import org.cactoos.iterable.Mapped;
 import org.cactoos.iterable.Sticky;
 import org.eolang.lints.comments.AsciiOnly;
 
@@ -46,11 +48,14 @@ public final class Program {
     /**
      * Lints to use.
      */
-    private static final Iterable<Lint<XML>> LINTS = new Sticky<>(
+    public static final Iterable<Lint<XML>> LINTS = new Sticky<>(
         new Joined<Lint<XML>>(
             new XslLints(),
-            Arrays.asList(
-                new AsciiOnly()
+                new Mapped<Lint<XML>>(
+                        JavaLint::new,
+                        new IterableOf<>(
+                                new AsciiOnly()
+                        )
             )
         )
     );

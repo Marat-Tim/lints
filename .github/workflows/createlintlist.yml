@@ -13,20 +13,22 @@ jobs:
           distribution: 'temurin'
           java-version: 21
       - run: |
-          mvn clean
+          GH_PAGES_BRANCH=gh-pages
           
+          mvn clean
           mvn package -DskipTests
           
-          java -jar target/printAll.jar
+          JAR_PREFIX="jar:file:$(readlink -f target/printAll.jar)\!/org/eolang/motives/"
+  
+          MOTIVES=$(java -jar target/printAll.jar \
+          | cut -c $((${#JAR_PREFIX}+1))-)
           
           jar xvf target/printAll.jar /org/eolang/motives/
           
-          git init target/org/eolang/motives/
+          cd org/eolang/motives/
           
-          git checkout main
-          
-          git add /org/eolang/motives/.
-          
+          git init
+          git checkout -b $GH_PAGES_BRANCH
+          echo "$MOTIVES" | xargs -n 1 git add
           git commit -m "test"
-          
-          git push ${{ github.server_url }}${{ github.event.repository.name }} main:gh-pages
+          git push --force ${{ github.server_url }}${{ github.event.repository.name }} $GH_PAGES_BRANCH

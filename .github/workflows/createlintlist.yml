@@ -35,5 +35,4 @@ jobs:
           git checkout -b $GH_PAGES_BRANCH
           echo "$MOTIVES" | xargs -n 1 git add || true
           git commit -m "test"
-          git push --force \
-          ${{ github.server_url }}/${{ github.repository }} $GH_PAGES_BRANCH
+          git push --force 

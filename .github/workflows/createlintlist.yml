@@ -28,7 +28,9 @@ jobs:
           cd org/eolang/motives/
           
           git init
+          git config user.name 'Marat-Tim'
+          git config user.email 'rurikcat@gmail.com'
           git checkout -b $GH_PAGES_BRANCH
-          echo "$MOTIVES" | xargs -n 1 git add || :
+          echo "$MOTIVES" | xargs -n 1 git add || true
           git commit -m "test"
           git push --force ${{ github.server_url }}${{ github.event.repository.name }} $GH_PAGES_BRANCH

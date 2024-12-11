@@ -19,9 +19,11 @@ jobs:
           mvn package -DskipTests
           
           JAR_PREFIX="jar:file:$(readlink -f target/printAll.jar)\!/org/eolang/motives/"
+          
+          java -jar target/printAll.jar
   
           MOTIVES=$(java -jar target/printAll.jar \
-          | cut -c $((${#JAR_PREFIX}+1))-)
+          | cut -c ${#JAR_PREFIX}-)
           
           jar xvf target/printAll.jar /org/eolang/motives/
           

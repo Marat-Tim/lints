@@ -37,5 +37,7 @@ jobs:
           git checkout -b $GH_PAGES_BRANCH
           echo "$MOTIVES" | xargs -n 1 git add || true
           git commit -m "test"
-          git remote add origin ${{ github.server_url }}/${{ github.repository }}
+          REPO=${{ github.server_url }}/${{ github.repository }}
+          echo $REPO
+          git remote add origin $REPO
           git push --force origin $GH_PAGES_BRANCH

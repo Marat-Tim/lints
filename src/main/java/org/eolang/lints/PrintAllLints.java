@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2016-2025 Objectionary.com
+ * Copyright (c) 2016-2024 Objectionary.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,40 +24,25 @@
 package org.eolang.lints;
 
 import com.jcabi.xml.XML;
-import org.cactoos.iterable.*;
-import org.eolang.lints.comments.LtAsciiOnly;
-import org.eolang.lints.misc.LtTestNotVerb;
 
-import javax.annotation.concurrent.ThreadSafe;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Collection of lints for individual XML files, provided
- * by the {@link Program} class.
- *
- * <p>This class is thread-safe.</p>
- *
- * @since 0.23
- */
-@ThreadSafe
-final class PkMono extends IterableEnvelope<Lint<XML>> {
-
-    /**
-     * Default ctor.
-     */
-    PkMono() {
-        super(
-            new Shuffled<>(
-                new Joined<Lint<XML>>(
-                    new PkByXsl(),
-                        new Mapped<Lint<XML>>(
-                            JavaLint::new,
-                            new IterableOf<>(
-                                    new LtAsciiOnly(),
-                                    new LtTestNotVerb()
-                            )
-                    )
-                )
-            )
-        );
+public class PrintAllLints {
+    public static void main(String[] args) {
+        List<Lint<XML>> allLints = new ArrayList<>();
+        new PkMono().forEach(allLints::add);
+        allLints.stream()
+//                .map(JavaLint::new)
+                .map(javaLint -> {
+                    try {
+                        return javaLint.motive();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                })
+                .forEach(System.out::println);
     }
+
 }

@@ -88,7 +88,7 @@ public final class LtAsciiOnly implements Lint<XML> {
     public String motive() throws IOException {
         return new IoCheckedText(
             new TextOf(
-                new ResourceOf("org/eolang/motives/comments/ascii-only.md")
+                new ResourceOf("org/eolang/motives/comments/lt-ascii-only.md")
             )
         ).asString();
     }

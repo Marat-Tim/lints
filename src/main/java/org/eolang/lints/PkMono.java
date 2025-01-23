@@ -24,13 +24,11 @@
 package org.eolang.lints;
 
 import com.jcabi.xml.XML;
-import java.util.Arrays;
-import javax.annotation.concurrent.ThreadSafe;
-import org.cactoos.iterable.IterableEnvelope;
-import org.cactoos.iterable.Joined;
-import org.cactoos.iterable.Shuffled;
+import org.cactoos.iterable.*;
 import org.eolang.lints.comments.LtAsciiOnly;
 import org.eolang.lints.misc.LtTestNotVerb;
+
+import javax.annotation.concurrent.ThreadSafe;
 
 /**
  * Collection of lints for individual XML files, provided
@@ -51,9 +49,12 @@ final class PkMono extends IterableEnvelope<Lint<XML>> {
             new Shuffled<>(
                 new Joined<Lint<XML>>(
                     new PkByXsl(),
-                    Arrays.asList(
-                        new LtAsciiOnly(),
-                        new LtTestNotVerb()
+                        new Mapped<Lint<XML>>(
+                            JavaLint::new,
+                            new IterableOf<>(
+                                    new LtAsciiOnly(),
+                                    new LtTestNotVerb()
+                            )
                     )
                 )
             )

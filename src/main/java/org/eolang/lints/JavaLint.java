@@ -23,12 +23,13 @@
  */
 package org.eolang.lints;
 
-import java.io.IOException;
-import java.util.Collection;
-
 import com.jcabi.xml.XML;
 import io.github.secretx33.resourceresolver.ClassPathResource;
 import org.cactoos.text.FormattedText;
+import org.cactoos.text.IoCheckedText;
+
+import java.io.IOException;
+import java.util.Collection;
 
 public class JavaLint implements Lint<XML> {
     private final Lint<XML> lint;
@@ -38,12 +39,17 @@ public class JavaLint implements Lint<XML> {
     }
 
     @Override
+    public String name() {
+        return lint.name();
+    }
+
+    @Override
     public Collection<Defect> defects(XML entity) throws IOException {
         return lint.defects(entity);
     }
 
     @Override
-    public String motive() throws Exception {
+    public String motive() throws IOException {
         String className = lint.getClass()
                 .getSimpleName()
                 .replaceAll("([a-z0-9])([A-Z])", "$1-$2")
@@ -51,9 +57,13 @@ public class JavaLint implements Lint<XML> {
         String packageName = lint.getClass().getPackage().getName();
         packageName = packageName.substring(packageName.lastIndexOf(".") + 1);
         return new ClassPathResource(
-                new FormattedText("org/eolang/motives/%s/%s.md",
-                        packageName,
-                        className).asString()).getURL().toString();
+                new IoCheckedText(
+                        new FormattedText("org/eolang/motives/%s/%s.md",
+                                packageName,
+                                className)
+                ).asString())
+                .getURL()
+                .toString();
     }
 
 }

@@ -23,15 +23,26 @@
  */
 package org.eolang.lints;
 
+import com.jcabi.xml.XML;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrintAllLints {
     public static void main(String[] args) {
-        Program.LINTS.forEach(lint -> {
-            try {
-                System.out.println(lint.motive());
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        });
+        List<Lint<XML>> allLints = new ArrayList<>();
+        new PkMono().forEach(allLints::add);
+        allLints.stream()
+//                .map(JavaLint::new)
+                .map(javaLint -> {
+                    try {
+                        return javaLint.motive();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                })
+                .forEach(System.out::println);
     }
 
 }

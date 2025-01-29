@@ -33,6 +33,7 @@ public class PrintAllLints {
     public static void main(String[] args) {
         List<Lint<XML>> allLints = new ArrayList<>();
         new PkMono().forEach(allLints::add);
+
         allLints.stream()
 //                .map(JavaLint::new)
                 .map(javaLint -> {

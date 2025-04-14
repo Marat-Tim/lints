@@ -14,7 +14,7 @@ jobs:
       - name: Run JMH Benchmark Action
         uses: volodya-lombrozo/jmh-benchmark-action@main
         with:
-          java-version: "11"
+          java-version: "21"
           base-ref: "master"
           benchmark-command: |
             mvn jmh:benchmark -Djmh.rf=json -Djmh.rff=benchmark.json

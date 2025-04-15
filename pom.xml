@@ -364,6 +364,37 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+      <id>java-17-plus</id>
+      <activation>
+        <jdk>[17,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <release>11</release>
+              <showWarnings>true</showWarnings>
+              <!--If you want to get all the errors at once, write false here and run-->
+              <failOnWarning>true</failOnWarning>
+              <compilerArgs>
+                <arg>-XDcompilePolicy=simple</arg>
+                <arg>--should-stop=ifError=FLOW</arg>
+                <arg>-Xplugin:ErrorProne -XepAllErrorsAsWarnings -Xep:InvalidBlockTag:OFF</arg>
+              </compilerArgs>
+              <annotationProcessorPaths>
+                <path>
+                  <groupId>com.google.errorprone</groupId>
+                  <artifactId>error_prone_core</artifactId>
+                  <version>2.37.0</version>
+                </path>
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
   <build>
     <pluginManagement>
@@ -431,22 +462,6 @@
         <configuration>
           <source>11</source>
           <target>11</target>
-          <release>11</release>
-          <showWarnings>true</showWarnings>
-          <!--If you want to get all the errors at once, write false here and run-->
-          <failOnWarning>true</failOnWarning>
-          <compilerArgs>
-            <arg>-XDcompilePolicy=simple</arg>
-            <arg>--should-stop=ifError=FLOW</arg>
-            <arg>-Xplugin:ErrorProne -XepAllErrorsAsWarnings -Xep:InvalidBlockTag:OFF</arg>
-          </compilerArgs>
-          <annotationProcessorPaths>
-            <path>
-              <groupId>com.google.errorprone</groupId>
-              <artifactId>error_prone_core</artifactId>
-              <version>2.31.0</version>
-            </path>
-          </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>

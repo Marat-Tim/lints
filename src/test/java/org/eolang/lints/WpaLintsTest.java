@@ -10,12 +10,10 @@ import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.lang.syntax.ArchRuleDefinition;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import matchers.WpaStoryMatcher;
 import org.cactoos.iterable.Mapped;
 import org.cactoos.list.ListOf;
@@ -70,29 +68,26 @@ final class WpaLintsTest {
     }
 
     @Test
+    @SuppressWarnings("StreamResourceLeak")
     void checksLocationOfYamlPacks() throws IOException {
         final List<String> groups = new ListOf<>(new WpaLints()).stream()
             .map(Lint::name)
             .collect(Collectors.toList());
-        try (
-            Stream<Path> paths =
-                Files.walk(Paths.get("src/test/resources/org/eolang/lints/packs/wpa"))
-        ) {
-            paths.filter(Files::isRegularFile)
-                .forEach(
-                    path -> {
-                        final String lint = path.getParent().getFileName().toString();
-                        MatcherAssert.assertThat(
-                            String.format(
-                                "Can't find lint for %s/%s, which must have name '%s'",
-                                lint, path.getFileName(), lint
-                            ),
-                            groups.contains(lint),
-                            new IsEqual<>(true)
-                        );
-                    }
-                );
-        }
+        Files.walk(Paths.get("src/test/resources/org/eolang/lints/packs/wpa"))
+            .filter(Files::isRegularFile)
+            .forEach(
+                path -> {
+                    final String lint = path.getParent().getFileName().toString();
+                    MatcherAssert.assertThat(
+                        String.format(
+                            "Can't find lint for %s/%s, which must have name '%s'",
+                            lint, path.getFileName(), lint
+                        ),
+                        groups.contains(lint),
+                        new IsEqual<>(true)
+                    );
+                }
+            );
     }
 
     @Test

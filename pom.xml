@@ -381,7 +381,8 @@
               <compilerArgs>
                 <arg>-XDcompilePolicy=simple</arg>
                 <arg>--should-stop=ifError=FLOW</arg>
-                <arg>-Xplugin:ErrorProne -XepAllErrorsAsWarnings -Xep:InvalidBlockTag:OFF</arg>
+                <arg>-Xplugin:ErrorProne -XepAllErrorsAsWarnings -Xep:InvalidBlockTag:OFF
+                  -Xep:StringConcatToTextBlock:OFF</arg>
               </compilerArgs>
               <annotationProcessorPaths>
                 <path>

@@ -28,12 +28,13 @@ import org.cactoos.text.TextOf;
  *  Markdown file based on the lint's name (Java class name) and lint's dimension
  *  (Java package name, e.g. `comments`).
  * @checkstyle StringLiteralsConcatenationCheck (30 lines)
+ * @checkstyle ConditionalRegexpMultilineCheck (30 lines)
  */
 final class LtAsciiOnly implements Lint<XML> {
 
     @Override
     public Collection<Defect> defects(final XML xmir) throws IOException {
-        final Collection<Defect> defects = new ArrayList<>(0);
+        final Collection<Defect> defects = new ArrayList<>();
         final Xnav xml = new Xnav(xmir.inner());
         final List<Xnav> comments = xml.path("/program/comments/comment")
             .collect(Collectors.toList());

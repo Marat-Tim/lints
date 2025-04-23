@@ -1,64 +1,84 @@
-critical/pos-without-line.md
-critical/application-duality.md
-errors/many-free-attributes.md
-critical/atom-with-phi.md
-comments/comment-is-too-wide.md
-metas/zero-version.md
-metas/mandatory-package.md
-aliases/duplicate-aliases.md
-aliases/alias-too-long.md
-misc/sparse-decoration.md
-aliases/unused-alias.md
-refs/line-is-absent.md
-aliases/alias-without-tail.md
-critical/unknown-rt.md
-critical/self-naming.md
-metas/incorrect-architect.md
-critical/atom-with-data.md
-critical/incorrect-rt-parts.md
-errors/unknown-name.md
-misc/wrong-sprintf-arguments.md
-metas/incorrect-node-rt-location.md
-critical/name-outside-of-abstract-object.md
-names/object-does-not-match-filename.md
-metas/incorrect-jvm-rt-location.md
-aliases/broken-alias-second.md
-critical/object-has-data.md
-critical/schema-is-absent.md
-metas/package-contains-multiple-parts.md
-errors/empty-object.md
-atoms/atom-and-base.md
-misc/one-high-level-object.md
-atoms/atom-in-atom.md
-metas/unknown-metas.md
-metas/duplicate-metas.md
-atoms/rt-without-atoms.md
-critical/package-without-tail.md
-metas/mandatory-home.md
-tests/unit-test-without-phi.md
-errors/global-noname.md
-lines/error-line-out-of-listing.md
-comments/comment-too-short.md
-metas/mandatory-version.md
-metas/incorrect-version.md
-lines/meta-line-out-of-listing.md
-comments/comment-without-dot.md
-errors/noname-attribute.md
-comments/lt-ascii-only.md
-misc/lt-test-not-verb.md
-aliases/broken-alias-first.md
-refs/broken-ref.md
-critical/duplicate-names.md
-metas/incorrect-package.md
-atoms/atom-without-rt.md
-errors/decorated-formation.md
-metas/unsorted-metas.md
-metas/incorrect-home.md
-atoms/not-empty-atom.md
-metas/prohibited-package.md
-critical/incorrect-bytes-format.md
-critical/same-line-names.md
-lines/object-line-out-of-listing.md
-metas/unique-metas.md
-misc/incorrect-test-object-name.md
-comments/comment-not-capitalized.md
+Latest version: test
+
+List of lints in this version:
+
+- [inconsistent-args](test-md/inconsistent-args.md)
+- [unit-test-without-live-file](test-md/unit-test-without-live-file.md)
+- [unit-test-missing](test-md/unit-test-missing.md)
+- [unlint-non-existing-defect](test-md/unlint-non-existing-defect.md)
+- [atom-is-not-unique](test-md/atom-is-not-unique.md)
+- [incorrect-alias](test-md/incorrect-alias.md)
+- [object-is-not-unique](test-md/object-is-not-unique.md)
+- [incorrect-number-of-attributes](test-md/incorrect-number-of-attributes.md)
+- [incorrect-test-object-name](test-md/incorrect-test-object-name.md)
+- [package-contains-multiple-parts](test-md/package-contains-multiple-parts.md)
+- [anonymous-formation](test-md/anonymous-formation.md)
+- [unique-metas](test-md/unique-metas.md)
+- [empty-alias](test-md/empty-alias.md)
+- [phi-is-not-first](test-md/phi-is-not-first.md)
+- [empty-object](test-md/empty-object.md)
+- [mandatory-home](test-md/mandatory-home.md)
+- [incorrect-node-rt-location](test-md/incorrect-node-rt-location.md)
+- [incorrect-package](test-md/incorrect-package.md)
+- [package-without-tail](test-md/package-without-tail.md)
+- [meta-line-out-of-listing](test-md/meta-line-out-of-listing.md)
+- [object-line-out-of-listing](test-md/object-line-out-of-listing.md)
+- [duplicate-names](test-md/duplicate-names.md)
+- [rt-without-atoms](test-md/rt-without-atoms.md)
+- [pos-without-line](test-md/pos-without-line.md)
+- [unknown-rt](test-md/unknown-rt.md)
+- [sparse-decoration](test-md/sparse-decoration.md)
+- [unknown-metas](test-md/unknown-metas.md)
+- [duplicate-aliases](test-md/duplicate-aliases.md)
+- [incorrect-bytes-format](test-md/incorrect-bytes-format.md)
+- [empty-spdx-tail](test-md/empty-spdx-tail.md)
+- [wrong-sprintf-arguments](test-md/wrong-sprintf-arguments.md)
+- [duplicate-metas](test-md/duplicate-metas.md)
+- [decorated-formation](test-md/decorated-formation.md)
+- [unit-test-without-phi](test-md/unit-test-without-phi.md)
+- [mandatory-package](test-md/mandatory-package.md)
+- [sparse-seq](test-md/sparse-seq.md)
+- [incorrect-version](test-md/incorrect-version.md)
+- [incorrect-spdx](test-md/incorrect-spdx.md)
+- [named-object-abstract-nested](test-md/named-object-abstract-nested.md)
+- [not-empty-atom](test-md/not-empty-atom.md)
+- [broken-alias-second](test-md/broken-alias-second.md)
+- [broken-alias-first](test-md/broken-alias-first.md)
+- [sprintf-without-formatters](test-md/sprintf-without-formatters.md)
+- [incorrect-jvm-rt-location](test-md/incorrect-jvm-rt-location.md)
+- [application-duality](test-md/application-duality.md)
+- [schema-is-absent](test-md/schema-is-absent.md)
+- [atom-in-atom](test-md/atom-in-atom.md)
+- [bytes-without-data](test-md/bytes-without-data.md)
+- [comment-is-too-wide](test-md/comment-is-too-wide.md)
+- [void-attributes-not-higher-than-other](test-md/void-attributes-not-higher-than-other.md)
+- [name-outside-of-abstract-object](test-md/name-outside-of-abstract-object.md)
+- [self-referencing](test-md/self-referencing.md)
+- [atom-without-rt](test-md/atom-without-rt.md)
+- [prohibited-package](test-md/prohibited-package.md)
+- [mandatory-version](test-md/mandatory-version.md)
+- [incorrect-rt-parts](test-md/incorrect-rt-parts.md)
+- [comment-too-short](test-md/comment-too-short.md)
+- [mandatory-spdx](test-md/mandatory-spdx.md)
+- [error-line-out-of-listing](test-md/error-line-out-of-listing.md)
+- [atom-and-base](test-md/atom-and-base.md)
+- [incorrect-architect](test-md/incorrect-architect.md)
+- [unused-void-attr](test-md/unused-void-attr.md)
+- [lambda-with-inners](test-md/lambda-with-inners.md)
+- [atom-with-data](test-md/atom-with-data.md)
+- [object-has-data](test-md/object-has-data.md)
+- [incorrect-home](test-md/incorrect-home.md)
+- [ascii-only](test-md/ascii-only.md)
+- [duplicate-as-attribute](test-md/duplicate-as-attribute.md)
+- [alias-too-long](test-md/alias-too-long.md)
+- [line-is-absent](test-md/line-is-absent.md)
+- [unused-alias](test-md/unused-alias.md)
+- [unsorted-metas](test-md/unsorted-metas.md)
+- [comment-without-dot](test-md/comment-without-dot.md)
+- [comment-not-capitalized](test-md/comment-not-capitalized.md)
+- [no-attribute-formation](test-md/no-attribute-formation.md)
+- [many-free-attributes](test-md/many-free-attributes.md)
+- [incorrect-unlint](test-md/incorrect-unlint.md)
+- [unlint-non-existing-defect](test-md/unlint-non-existing-defect.md)
+
+Published on Wed Apr 23 22:34:21 Z 2025.

@@ -17,6 +17,7 @@ import org.cactoos.iterable.Joined;
 
 public class SaveAll {
     public static void main(String[] args) throws IOException {
+
         if (args.length != 1) {
             throw new IllegalStateException("First arg must exist and point to version");
         }

@@ -14,12 +14,15 @@ fi
 rm -rf "gh-pages/${tag}"
 mkdir -p "gh-pages/${tag}"
 
+mkdir "gh-pages/${tag}-md"
+mvn clean compile exec:java "-Dexec.args=${tag}"
+
 while IFS= read -r f; do
   n=$(basename "${f}" .md)
   html=gh-pages/${tag}/${n}.html
   pandoc "${f}" -o "${html}"
   echo "${n} -> $(du -b "${html}" | cut -f1) bytes"
-done < <(find src/main/resources/org/eolang/motives -name '*.md')
+done < <(find "gh-pages/${tag}-md" -name '*.md')
 
 list_them() {
   printf "<ul>\n"

@@ -7,8 +7,8 @@ package org.eolang.lints;
 import com.github.lombrozo.xnav.Xnav;
 import com.jcabi.xml.XML;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -43,7 +43,7 @@ final class LtInvalidMarkdownComment implements Lint<Map<String, XML>> {
 
     @Override
     public Collection<Defect> defects(final Map<String, XML> pkg) throws IOException {
-        final Collection<Defect> defects = new LinkedList<>();
+        final Collection<Defect> defects = new ArrayList<>(0);
         try (MarkdownLinter mdlinter = new MarkdownLinter()) {
             for (final XML xmir : pkg.values()) {
                 this.defectsOfXmir(xmir, mdlinter).forEach(defects::add);

@@ -19,7 +19,7 @@ import org.graalvm.polyglot.Value;
  *
  * @since 0.0.47
  */
-public final class MarkdownLinter implements Closeable {
+final class MarkdownLinter implements Closeable {
     /**
      * JavaScript code of markdownlint with function, that run markdownlint on single string.
      */
@@ -46,7 +46,7 @@ public final class MarkdownLinter implements Closeable {
     private final Value mdlint;
 
     @SuppressWarnings("PMD.ConstructorOnlyInitializesOrCallOtherConstructors")
-    public MarkdownLinter() {
+    MarkdownLinter() {
         this.context = Context.newBuilder("js")
             .option("engine.WarnInterpreterOnly", "false")
             .build();
@@ -84,6 +84,13 @@ public final class MarkdownLinter implements Closeable {
         this.context.close();
     }
 
+    /**
+     * Get the first name starting with MD from the name array.
+     *
+     * @param names Java scrit array of names.
+     * @return The first name starting with MD.
+     * @throws IllegalStateException If no name starting with MD is found.
+     */
     private static String getName(final Value names) {
         for (int idx = 0; idx < names.getArraySize(); idx += 1) {
             final String name = names.getArrayElement(idx).asString();

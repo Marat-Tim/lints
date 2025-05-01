@@ -166,11 +166,11 @@ public interface Defect {
          * @param text Description of the defect
          * @checkstyle ParameterNumberCheck (5 lines)
          */
-        public Default(
+        Default(
             final String rule, final Severity severity,
             final int line, final String text
         ) {
-            this(rule, severity, null, line, text);
+            this(rule, severity, "", line, text);
         }
 
         /**

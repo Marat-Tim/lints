@@ -4,7 +4,7 @@
  */
 /**
  * @todo #15:45min Add eslint to repository https://github.com/eslint/eslint.
- * We should integrate eslint into the eslint repository to monitor the quality of code written in java script.
+ * We should integrate eslint into repository to monitor the quality of code written in java script.
  */
 import { lint as lintSync } from "markdownlint/sync";
 

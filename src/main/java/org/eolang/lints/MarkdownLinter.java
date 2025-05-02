@@ -59,7 +59,7 @@ final class MarkdownLinter implements Closeable {
         final Value errors = this.mdlint.execute(text);
         for (int idx = 0; idx < errors.getArraySize(); idx += 1) {
             final Value error = errors.getArrayElement(idx);
-            final String rule = getName(error.getMember("ruleNames"));
+            final String rule = rule(error.getMember("ruleNames"));
             defects.add(
                 new Defect.Default(
                     rule,
@@ -91,7 +91,7 @@ final class MarkdownLinter implements Closeable {
      * @return The first name starting with MD.
      * @throws IllegalStateException If no name starting with MD is found.
      */
-    private static String getName(final Value names) {
+    private static String rule(final Value names) {
         for (int idx = 0; idx < names.getArraySize(); idx += 1) {
             final String name = names.getArrayElement(idx).asString();
             if (name.startsWith("MD")) {

@@ -85,7 +85,7 @@ final class MarkdownLinter implements Closeable {
     }
 
     /**
-     * Get the first name starting with MD from the name array.
+     * MD rule.
      *
      * @param names Javascript array of names.
      * @return The first name starting with MD.

@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: Copyright (c) 2016-2025 Objectionary.com
+# SPDX-License-Identifier: MIT
+[Aa]ttr(s)?
+[Mm]eta(s)?
+[Rr]untime(s)?
+[Dd]ecoratee
+FQN(s)?
+([Uu]n)?[Ll]int(s)?
+[Mm]eta(s)?
+[Aa]rg(s)?
+[Ff]ormatter(s)?

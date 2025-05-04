@@ -105,42 +105,42 @@ Here is the result of linting XMIRs:
 <!-- benchmark_begin -->
 ```text
 Input: com/sun/jna/PointerType.class (S source)
-Lint time: 4s (3527 ms)
+Lint time: 4s (4488 ms)
 
 Input: com/sun/jna/Memory.class (M source)
-Lint time: 4s (4028 ms)
+Lint time: 5s (4965 ms)
 
 Input: com/sun/jna/Pointer.class (L source)
-Lint time: 5s (5005 ms)
+Lint time: 6s (5944 ms)
 
 Input: com/sun/jna/Structure.class (XL source)
-Lint time: 6s (6416 ms)
+Lint time: 7s (7344 ms)
 
 Input: org/apache/hadoop/hdfs/server/namenode/FSNamesystem.class (XXL source)
-Lint time: 19s (19008 ms)
+Lint time: 20s (19790 ms)
 
 
 
-unlint-non-existing-defect (XXL) (9394 ms)
-unlint-non-existing-defect (XL) (3164 ms)
-unlint-non-existing-defect (L) (2467 ms)
-unlint-non-existing-defect (M) (1972 ms)
-unlint-non-existing-defect (S) (1724 ms)
-application-duality (XXL) (1517 ms)
-object-has-data (XXL) (1302 ms)
-named-object-abstract-nested (XXL) (966 ms)
-name-outside-of-abstract-object (XXL) (844 ms)
-incorrect-bytes-format (XXL) (403 ms)
-line-is-absent (XXL) (358 ms)
-application-duality (XL) (292 ms)
-duplicate-names (XXL) (269 ms)
-bytes-without-data (XXL) (261 ms)
-object-has-data (XL) (260 ms)
-named-object-abstract-nested (XL) (193 ms)
+unlint-non-existing-defect (XXL) (9744 ms)
+unlint-non-existing-defect (XL) (3625 ms)
+unlint-non-existing-defect (L) (2916 ms)
+unlint-non-existing-defect (M) (2439 ms)
+unlint-non-existing-defect (S) (2201 ms)
+application-duality (XXL) (1553 ms)
+object-has-data (XXL) (1235 ms)
+named-object-abstract-nested (XXL) (930 ms)
+name-outside-of-abstract-object (XXL) (767 ms)
+incorrect-bytes-format (XXL) (416 ms)
+line-is-absent (XXL) (380 ms)
+application-duality (XL) (305 ms)
+bytes-without-data (XXL) (256 ms)
+duplicate-names (XXL) (249 ms)
+object-has-data (XL) (248 ms)
+named-object-abstract-nested (XL) (186 ms)
 ```
 
 The results were calculated in [this GHA job][benchmark-gha]
-on 2025-04-28 at 16:44,
+on 2025-05-04 at 15:06,
 on Linux with 4 CPUs.
 <!-- benchmark_end -->
 
@@ -170,4 +170,4 @@ If you want the code to be checked using
 
 [XMIR]: https://news.eolang.org/2022-11-25-xmir-guide.html
 [EO]: https://www.eolang.org
-[benchmark-gha]: https://github.com/objectionary/lints/actions/runs/14713088694
+[benchmark-gha]: https://github.com/Marat-Tim/lints/actions/runs/14822443202

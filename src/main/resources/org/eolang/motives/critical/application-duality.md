@@ -1,6 +1,6 @@
 # Application duality
 
-In EO, it'sn't supported to have an app with and without binding at
+In EO, it isn't supported to have an app with and without binding at
 the same time, so it's prohibited in the [XMIR] too.
 
 Incorrect:

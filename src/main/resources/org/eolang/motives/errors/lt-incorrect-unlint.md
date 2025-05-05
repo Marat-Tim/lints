@@ -18,4 +18,4 @@ Correct:
 +unlint ascii-only
 ```
 
-Because lint with name "ascii-only" exist
+Because lint with name `ascii-only` exist

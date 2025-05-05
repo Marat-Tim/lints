@@ -5,7 +5,8 @@
 [Rr]untime(s)?
 [Dd]ecoratee
 FQN(s)?
-([Uu]n)?[Ll]int(s)?
+[Ll]int(s)?
+([Uu]n)?lint(s)?
 [Mm]eta(s)?
 [Aa]rg(s)?
 [Ff]ormatter(s)?

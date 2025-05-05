@@ -1,12 +1,10 @@
 # SPDX-FileCopyrightText: Copyright (c) 2016-2025 Objectionary.com
 # SPDX-License-Identifier: MIT
 ---
-name: vale
-on: [ pull_request ]
-
+name: vale-comment
+'on': [ pull_request ]
 jobs:
-  vale:
-    name: runner / vale
+  vale-comment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,4 +12,4 @@ jobs:
         with:
           files: 'src'
           fail_on_error: 'true'
-          reporter: 'github-pr-review'
+          reporter: 'local'

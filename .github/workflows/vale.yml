@@ -13,3 +13,4 @@ jobs:
           files: 'src/main/resources/org/eolang/motives'
           fail_on_error: 'true'
           reporter: 'github-pr-review'
+          filter_mode: 'nofilter'

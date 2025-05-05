@@ -1,4 +1,4 @@
-# External Weak Typed Atoms
+# External weak typed atoms
 
 Weak typing `/?` does not allowed outside of `org.eolang` package.
 

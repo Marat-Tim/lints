@@ -1,4 +1,4 @@
-# Named Object Abstract Nested
+# Named object abstract nested
 
 In [XMIR], named objects cannot be nested deeper than one level inside an
 abstract object.

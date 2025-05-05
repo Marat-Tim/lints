@@ -1,4 +1,4 @@
-# Error Line Out Of Listing
+# Error line out of listing
 
 Line number inside `<error/>` in [XMIR] cannot be bigger than amount of lines
 in the listing.

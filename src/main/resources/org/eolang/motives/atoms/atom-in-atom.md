@@ -1,4 +1,4 @@
-# Atom in Atom
+# Atom in atom
 
 In [XMIR], object is an atom must not have atoms as child objects (attributes).
 

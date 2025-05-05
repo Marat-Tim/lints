@@ -1,4 +1,4 @@
-# Unique Metas
+# Unique metas
 
 The following metas must be unique in the `.eo` source file:
 

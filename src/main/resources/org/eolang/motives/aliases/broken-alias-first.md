@@ -1,4 +1,4 @@
-# Broken Alias (First Part)
+# Broken alias (first part)
 
 The first part of the `+alias` meta may only contain the name
 of the object, not its FQN. For example, here is how it may look

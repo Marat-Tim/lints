@@ -1,4 +1,4 @@
-# No Name Attribute
+# No name attribute
 
 Each object's attribute must have a name.
 

@@ -1,4 +1,4 @@
-# No Attribute Formation
+# No attribute formation
 
 It's not recommended to have formation without void attributes. Such formations
 are similar to [Utility classes] in Java.

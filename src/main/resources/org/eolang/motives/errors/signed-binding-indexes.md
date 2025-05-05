@@ -1,4 +1,4 @@
-# Signed Binding Indexes
+# Signed binding indexes
 
 Binding index of application must not be a signed number.
 

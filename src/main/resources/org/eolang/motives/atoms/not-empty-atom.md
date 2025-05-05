@@ -1,4 +1,4 @@
-# Not Empty Atom
+# Not empty atom
 
 In [XMIR], atom(object, that have inner object with `@name` equal to `λ`)
 should not have inner object with `@base` not equal to `∅`.

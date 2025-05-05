@@ -1,4 +1,4 @@
-# Object does not match Filename
+# Object does not match filename
 
 Every `.eo` file should not have different name than object, which may confuse
 the readers.

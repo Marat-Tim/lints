@@ -1,4 +1,4 @@
-# Sparse Decoration
+# Sparse decoration
 
 Sparse decoration of the base object is prohibited.
 

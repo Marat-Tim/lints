@@ -1,4 +1,4 @@
-# Anonymous Formation
+# Anonymous formation
 
 Anonymous formation should not access object, undefined inside the formation.
 

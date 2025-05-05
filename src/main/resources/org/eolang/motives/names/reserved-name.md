@@ -1,6 +1,6 @@
 # Reserved name
 
-Each object name should not duplicate already reserved names in `org.eolang.*`
+Each object name shouldn't duplicate already reserved names in `org.eolang.*`
 objects [located in home][home].
 
 Incorrect:

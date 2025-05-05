@@ -24,7 +24,7 @@ Correct:
   five > @
 ```
 
-Also, it is possible to have sparse decoration in tests:
+Also, it's possible to have sparse decoration in tests:
 
 ```eo
 # This is my unit test.

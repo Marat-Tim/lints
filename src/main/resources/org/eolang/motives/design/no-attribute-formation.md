@@ -19,7 +19,7 @@ Correct:
   x > sbp
 ```
 
-It is also correct having an "attribute-free" formation, but only if its parent
+It's also correct having an "attribute-free" formation, but only if its parent
 is a formation as well:
 
 ```eo

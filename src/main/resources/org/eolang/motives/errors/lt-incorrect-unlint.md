@@ -1,7 +1,7 @@
 # Incorrect unlints
 
-The meta part of the object should not contain +unlint point on non-existent
-lint, as it is useless
+The meta part of the object shouldn't contain +unlint point on non-existent
+lint, as it's useless
 
 Incorrect:
 
@@ -9,7 +9,7 @@ Incorrect:
 +unlint abracadabra
 ```
 
-Because lint with name "abracadabra" does not exist(perhaps at some
+Because lint with name "abracadabra" doesn't exist(perhaps at some
 point this lint will be added and this example will become correct :) )
 
 Correct:

@@ -1,4 +1,4 @@
-# Object is not unique
+# Object isn't unique
 
 High-level object names must be unique across the package.
 

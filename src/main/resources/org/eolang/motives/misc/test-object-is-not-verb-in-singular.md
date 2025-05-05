@@ -1,4 +1,4 @@
-# Test object is not verb in singular
+# Test object isn't verb in singular
 
 Test object name should start with verb in singular form.
 

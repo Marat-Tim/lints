@@ -1,4 +1,4 @@
-# `@` is not first
+# `@` isn't first
 
 The `@` attribute should always go first.
 

@@ -11,3 +11,6 @@ FQN(s)?
 [Aa]rg(s)?
 [Ff]ormatter(s)?
 JVM(s)?
+XMIR
+SPDX
+ASCII

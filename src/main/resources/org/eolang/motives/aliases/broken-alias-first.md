@@ -18,7 +18,7 @@ object used later in the code. It will automatically be replaced
 with `org.eolang.io.stdout`.
 
 The error may also indicate incorrect usage of the `<meta>` element
-in XMIR. The alias defined above must look like this, in XMIR:
+in XMIR. The alias defined preceding must look like this, in XMIR:
 
 ```xml
 <object>

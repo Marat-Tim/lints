@@ -12,7 +12,7 @@ Incorrect:
 Correct:
 
 ```eo
-[] > decorates-application
+[] > decorates-app
   if > @
     true
     5

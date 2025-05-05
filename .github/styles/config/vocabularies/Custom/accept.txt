@@ -8,4 +8,3 @@ FQN(s)?
 ([Uu]n)?[Ll]int(s)?
 [Mm]eta(s)?
 [Aa]rg(s)?
-[Ff]ormatter(s)?

@@ -30,4 +30,3 @@ Correct:
 
   [y] > not /bool
 ```
-

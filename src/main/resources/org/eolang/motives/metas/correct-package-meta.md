@@ -17,4 +17,3 @@ Correct:
 
 [] > foo
 ```
-

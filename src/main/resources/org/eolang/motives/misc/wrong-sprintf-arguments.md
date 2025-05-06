@@ -22,4 +22,3 @@ Correct:
       "Hello, %s! Your account is %d."
       * name acc
 ```
-

@@ -27,4 +27,3 @@ Correct:
 # No comments.
 [] > foo
 ```
-

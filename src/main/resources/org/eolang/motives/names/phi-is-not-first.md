@@ -32,4 +32,3 @@ The position of `@` after void attributes is also allowed:
       *
         "f"
 ```
-

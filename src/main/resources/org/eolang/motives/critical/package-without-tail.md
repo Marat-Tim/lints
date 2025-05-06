@@ -19,4 +19,3 @@ Correct:
 # Foo.
 [] > foo
 ```
-

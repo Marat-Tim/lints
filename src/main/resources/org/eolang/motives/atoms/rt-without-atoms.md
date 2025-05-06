@@ -18,4 +18,3 @@ Correct:
 [attr] > foo
   [] > test /int
 ```
-

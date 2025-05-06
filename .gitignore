@@ -13,3 +13,4 @@ mochawesome-report/
 node_modules/
 target/
 temp/
+.aidy

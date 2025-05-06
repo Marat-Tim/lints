@@ -56,7 +56,7 @@ final class WpaStory {
      * @throws IOException if I/O fails
      */
     @SuppressWarnings("unchecked")
-    public Map<List<String>, XML> execute() throws IOException {
+    public Map<List<String>, Map<XML, Map<String, XML>>> execute() throws IOException {
         final Map<String, Object> loaded = new Yaml().load(this.yaml);
         final Map<String, XML> programs = new HashMap<>(0);
         loaded.forEach(
@@ -90,7 +90,8 @@ final class WpaStory {
         }
         return new MapOf<>(
             new MapEntry<>(
-                (List<String>) xpaths, WpaStory.defectsAsXml(found)
+                (List<String>) xpaths,
+                new MapOf<>(WpaStory.defectsAsXml(found), programs)
             )
         );
     }

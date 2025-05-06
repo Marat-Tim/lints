@@ -22,3 +22,4 @@ Correct:
 
 [] > foo
 ```
+

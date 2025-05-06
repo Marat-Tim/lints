@@ -28,3 +28,4 @@ Correct:
 ```
 
 [SemVer]: https://semver.org/
+

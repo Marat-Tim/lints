@@ -518,10 +518,50 @@
         <!-- version from the parent pom -->
         <executions>
           <execution>
+            <id>unzip-home</id>
             <phase>generate-sources</phase>
             <configuration>
               <target>
                 <unzip src="${project.build.directory}/downloaded/home.zip" dest="${project.build.directory}/downloaded"/>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>validate-markdown</id>
+            <phase>verify</phase>
+            <configuration>
+              <target>
+                <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath"/>
+                <property environment="env"/>
+                <available file="vale" filepath="${env.PATH}" property="vale.present"/>
+                <if>
+                  <equals arg1="${vale.present}" arg2="true"/>
+                  <then>
+                    <condition property="os.windows">
+                      <os family="windows"/>
+                    </condition>
+                    <if>
+                      <equals arg1="${os.windows}" arg2="true"/>
+                      <then>
+                        <exec executable="cmd" failonerror="true">
+                          <arg line="/c vale"/>
+                          <arg line="src"/>
+                        </exec>
+                      </then>
+                      <else>
+                        <exec executable="vale" failonerror="true">
+                          <arg line="src"/>
+                        </exec>
+                      </else>
+                    </if>
+                  </then>
+                  <else>
+                    <echo message="Vale is not available in PATH"/>
+                  </else>
+                </if>
               </target>
             </configuration>
             <goals>
